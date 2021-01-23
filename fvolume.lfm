@@ -1,0 +1,84 @@
+object frmVolume: TfrmVolume
+  Left = 313
+  Height = 400
+  Top = 858
+  Width = 400
+  Caption = 'Volume'
+  ClientHeight = 400
+  ClientWidth = 400
+  LCLVersion = '2.0.6.0'
+  object Label1: TLabel
+    Left = 39
+    Height = 17
+    Top = 25
+    Width = 43
+    Caption = 'Stories'
+    ParentColor = False
+  end
+  object ListBox1: TListBox
+    Left = 55
+    Height = 62
+    Top = 84
+    Width = 116
+    ItemHeight = 0
+    ScrollWidth = 112
+    TabOrder = 0
+    TopIndex = -1
+  end
+  object BitBtn1: TBitBtn
+    Left = 13
+    Height = 27
+    Top = 323
+    Width = 27
+    Caption = 'BitBtn1'
+    TabOrder = 1
+  end
+  object BitBtn2: TBitBtn
+    Left = 49
+    Height = 34
+    Top = 323
+    Width = 27
+    Caption = 'BitBtn2'
+    TabOrder = 2
+  end
+  object BitBtn3: TBitBtn
+    Left = 92
+    Height = 36
+    Top = 330
+    Width = 24
+    Caption = 'BitBtn3'
+    TabOrder = 3
+  end
+  object BitBtn4: TBitBtn
+    Left = 141
+    Height = 39
+    Top = 333
+    Width = 44
+    Caption = 'BitBtn4'
+    TabOrder = 4
+  end
+  object BitBtn5: TBitBtn
+    Left = 202
+    Height = 30
+    Top = 333
+    Width = 37
+    Caption = 'BitBtn5'
+    TabOrder = 5
+  end
+  object Button1: TButton
+    Left = 274
+    Height = 37
+    Top = 331
+    Width = 60
+    Caption = 'Button1'
+    TabOrder = 6
+  end
+  object Button2: TButton
+    Left = 320
+    Height = 40
+    Top = 256
+    Width = 35
+    Caption = 'Button2'
+    TabOrder = 7
+  end
+end
