@@ -12,15 +12,15 @@ type
   { TfrmVolume }
 
   TfrmVolume = class(TForm)
-    BitBtn1: TBitBtn;
-    BitBtn2: TBitBtn;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
-    BitBtn5: TBitBtn;
-    Button1: TButton;
-    Button2: TButton;
-    Label1: TLabel;
-    ListBox1: TListBox;
+    btnAdd: TBitBtn;
+    btnEdit: TBitBtn;
+    btnDelete: TBitBtn;
+    btnSave: TBitBtn;
+    btnProfiles: TBitBtn;
+    btnMake: TButton;
+    btnBuild: TButton;
+    labStories: TLabel;
+    lstStories: TListBox;
   private
 
   public

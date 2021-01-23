@@ -1,7 +1,7 @@
 object frmEditVolume: TfrmEditVolume
-  Left = 430
+  Left = 720
   Height = 240
-  Top = 764
+  Top = 916
   Width = 600
   AutoSize = True
   BorderStyle = bsDialog
