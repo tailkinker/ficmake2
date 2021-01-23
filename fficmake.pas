@@ -1,5 +1,5 @@
 {
-Copyright 2013 Timothy Groves <timothy.red.groves@gmail.com>
+Copyright 2020 Timothy Groves <timothy.red.groves@gmail.com>
 
 This file is part of FicMake.
 
@@ -42,9 +42,11 @@ type
     btnAbout: TBitBtn;
     labVolumes: TLabel;
     lstVolumes: TListBox;
+    procedure btnAboutClick(Sender: TObject);
     procedure btnAddVolumeClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
     procedure btnRemoveVolumeClick(Sender: TObject);
+    procedure btnSaveClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
     procedure FormCreate(Sender: TObject);
     procedure lstVolumesClick(Sender: TObject);
@@ -62,9 +64,15 @@ var
 implementation
 
 uses
+  fabout,
   LCLType;
 
 {$R *.lfm}
+
+function HomeDir : string;
+begin
+  HomeDir := GetEnvironmentVariable ('HOME') + '/.ficmake2';
+end;
 
 { TfrmFicmake }
 
@@ -73,16 +81,22 @@ begin
   Left := (Screen.Width - Width) div 2;
   Top := (Screen.Height - Height) div 2;
   VolumeList := tVolumeList.Create;
+  if not (DirectoryExists (HomeDir)) then
+    CreateDir (HomeDir);
+  if (FileExists (HomeDir + '/volumes.fic')) then begin
+    VolumeList.Load(HomeDir + '/volumes.fic');
+    UpdateVolumeList
+  end;
 end;
 
 procedure TfrmFicmake.lstVolumesClick(Sender: TObject);
 begin
-  btEdit.Enabled := FALSE;
+  btnEdit.Enabled := FALSE;
   btnRemoveVolume.Enabled := FALSE;
   if (lstVolumes.ItemIndex > -1) then begin
-    VolumeList.Select (lstVolumes.Items (lstVolumes.ItemIndex));
+    VolumeList.Select (lstVolumes.Items [lstVolumes.ItemIndex]);
     if (VolumeList.ErrorState = VE_NOERROR) then begin
-      btEdit.Enabled := TRUE;
+      btnEdit.Enabled := TRUE;
       btnRemoveVolume.Enabled := TRUE;
     end;
   end;
@@ -101,10 +115,18 @@ begin
   lstVolumes.ItemIndex := VolumeList.IndexOf;
 end;
 
+procedure TfrmFicmake.btnAboutClick(Sender: TObject);
+begin
+  with (TfrmAbout.Create(Application)) do begin
+    ShowModal;
+    Free;
+  end;
+end;
+
 procedure TfrmFicmake.btnEditClick(Sender: TObject);
 begin
   if (lstVolumes.ItemIndex <> -1) then begin
-    VolumeList.Select(lstVolumes.Items(lstVolumes.ItemIndex));
+    VolumeList.Select(lstVolumes.Items[lstVolumes.ItemIndex]);
     VolumeList.Current.Edit;
     UpdateVolumeList;
   end;
@@ -116,21 +138,28 @@ var
 begin
   if (lstVolumes.ItemIndex <> -1) then begin
     s := 'Are you sure you wish to delete the volume "'
-      + lstVolumes.Items(lstVolumes.ItemIndex) + "?  '
+      + lstVolumes.Items[lstVolumes.ItemIndex] + '"?  '
       + '(This does not remove any files from your hard drive.)';
     if (Application.MessageBox (pchar(s), 'Delete Volume',
         MB_ICONQUESTION + MB_YESNO) = IDYES) then begin
-      VolumeList.Select(lstVolumes.Items(lstVolumes.ItemIndex));
+      VolumeList.Select(lstVolumes.Items[lstVolumes.ItemIndex]);
       VolumeList.Delete;
       UpdateVolumeList;
     end;
   end;
 end;
 
+procedure TfrmFicmake.btnSaveClick(Sender: TObject);
+begin
+  VolumeList.Save(HomeDir + '/volumes.fic');
+end;
+
 procedure TfrmFicmake.FormCloseQuery(Sender: TObject; var CanClose: boolean);
 var
   s : string;
 begin
+  if (VolumeList.Dirty) then
+    SaveBeforeExit;
   s := 'Are you sure you wish to exit FicMake?  '
     + 'Any unsaved progress will be lost.';
   if (Application.MessageBox (pchar(s), 'Exit FicMake',
@@ -155,11 +184,13 @@ begin
 end;
 
 procedure TfrmFicmake.SaveBeforeExit;
+var
+  s : string;
 begin
 s := 'Save the volume list before exiting?';
 if (Application.MessageBox (pchar(s), 'Save',
     MB_ICONQUESTION + MB_YESNO) = IDYES) then
-  VolumeList.Save(
+  VolumeList.Save(HomeDir + '/volumes.fic');
 end;
 
 end.

@@ -263,7 +263,7 @@ begin
     reset (t);
     readln (t, s);
     while (s <> '[END LIST]') do begin
-      if (s = '[Volume]') then begin
+      if (s = '[tVolume]') then begin
         NewVolume := tVolume.Create;
         NewVolume.Load (t);
         t_error_state := VE_NOERROR;

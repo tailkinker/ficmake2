@@ -1,5 +1,5 @@
 {
-Copyright 2013 Timothy Groves <timothy.red.groves@gmail.com>
+Copyright 2020 Timothy Groves <timothy.red.groves@gmail.com>
 
 This file is part of FicMake.
 
