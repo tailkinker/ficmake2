@@ -45,6 +45,7 @@ type
     procedure btnAboutClick(Sender: TObject);
     procedure btnAddVolumeClick(Sender: TObject);
     procedure btnEditClick(Sender: TObject);
+    procedure btnProfilesClick(Sender: TObject);
     procedure btnRemoveVolumeClick(Sender: TObject);
     procedure btnSaveClick(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: boolean);
@@ -64,7 +65,7 @@ var
 implementation
 
 uses
-  fabout,
+  fabout, fpglobal,
   LCLType;
 
 {$R *.lfm}
@@ -129,6 +130,14 @@ begin
     VolumeList.Select(lstVolumes.Items[lstVolumes.ItemIndex]);
     VolumeList.Current.Edit;
     UpdateVolumeList;
+  end;
+end;
+
+procedure TfrmFicmake.btnProfilesClick(Sender: TObject);
+begin
+  with (TfrmGlobalProfile.Create(Application)) do begin
+    ShowModal;
+    Free
   end;
 end;
 

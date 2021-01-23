@@ -633,6 +633,7 @@ object frmFicmake: TfrmFicmake
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
     }
+    OnClick = btnProfilesClick
     TabOrder = 4
   end
   object btnSettings: TBitBtn

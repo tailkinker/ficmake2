@@ -39,7 +39,7 @@
         <PackageName Value="LCL"/>
       </Item1>
     </RequiredPackages>
-    <Units Count="10">
+    <Units Count="11">
       <Unit0>
         <Filename Value="ficmake.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -91,8 +91,15 @@
         <Filename Value="fvolume.pas"/>
         <IsPartOfProject Value="True"/>
         <ComponentName Value="frmVolume"/>
+        <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
       </Unit9>
+      <Unit10>
+        <Filename Value="fpglobal.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGlobalProfile"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

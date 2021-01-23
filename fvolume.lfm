@@ -1,7 +1,7 @@
 object frmVolume: TfrmVolume
-  Left = 313
+  Left = 306
   Height = 400
-  Top = 858
+  Top = 881
   Width = 400
   Caption = 'Volume'
   ClientHeight = 400
