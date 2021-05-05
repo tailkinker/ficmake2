@@ -43,11 +43,9 @@ begin
 
   labVersion.Caption := 'Version ' + IntToStr (Version [0]) + '.'
     + IntToStr (Version [1]) + '.' + IntToStr (Version [2]);
-  {
   if (vAlpha) then
     labVersion.Caption := labVersion.Caption + 'a Build '
       + IntToStr (Version [3]);
-  }
 end;
 
 end.

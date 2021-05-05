@@ -5,7 +5,8 @@ unit fpglobal;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Buttons,
+  Menus;
 
 type
 
@@ -18,6 +19,12 @@ type
     btnSave: TBitBtn;
     labProfiles: TLabel;
     lstProfiles: TListBox;
+    mnuAddPDF: TMenuItem;
+    mnuAddHTML: TMenuItem;
+    mnuAddText: TMenuItem;
+    mnuAddePub: TMenuItem;
+    mnuAddProfile: TPopupMenu;
+    procedure btnAddClick(Sender: TObject);
   private
 
   public
@@ -29,7 +36,19 @@ var
 
 implementation
 
+uses
+  LCLType;
+
 {$R *.lfm}
+
+{ TfrmGlobalProfile }
+
+procedure TfrmGlobalProfile.btnAddClick(Sender: TObject);
+var
+  pnt: TPoint;
+begin
+  mnuAddProfile.Popup;
+end;
 
 end.
 

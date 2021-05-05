@@ -1,7 +1,7 @@
 object frmEditVolume: TfrmEditVolume
-  Left = 720
+  Left = 920
   Height = 240
-  Top = 916
+  Top = 131
   Width = 600
   AutoSize = True
   BorderStyle = bsDialog
@@ -17,7 +17,7 @@ object frmEditVolume: TfrmEditVolume
     Left = 8
     Height = 17
     Top = 8
-    Width = 90
+    Width = 87
     BorderSpacing.Around = 8
     Caption = 'Volume Name'
     ParentColor = False
@@ -29,7 +29,7 @@ object frmEditVolume: TfrmEditVolume
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 8
-    Height = 26
+    Height = 30
     Hint = 'The name of the volume, for your reference'
     Top = 33
     Width = 584
@@ -44,8 +44,8 @@ object frmEditVolume: TfrmEditVolume
     AnchorSideTop.Side = asrBottom
     Left = 8
     Height = 17
-    Top = 67
-    Width = 143
+    Top = 71
+    Width = 141
     BorderSpacing.Around = 8
     Caption = 'Volume Base Directory'
     ParentColor = False
@@ -57,9 +57,9 @@ object frmEditVolume: TfrmEditVolume
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 8
-    Height = 26
+    Height = 30
     Hint = 'This is the root directory for this volume'
-    Top = 92
+    Top = 96
     Width = 584
     ShowHidden = False
     ButtonWidth = 23
@@ -76,8 +76,8 @@ object frmEditVolume: TfrmEditVolume
     AnchorSideTop.Side = asrBottom
     Left = 8
     Height = 17
-    Top = 126
-    Width = 136
+    Top = 134
+    Width = 133
     BorderSpacing.Around = 8
     Caption = 'Default Author Name'
     ParentColor = False
@@ -89,9 +89,9 @@ object frmEditVolume: TfrmEditVolume
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     Left = 8
-    Height = 26
+    Height = 30
     Hint = 'Who''s the primary author for this volume?'
-    Top = 151
+    Top = 159
     Width = 584
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Around = 8
@@ -102,11 +102,11 @@ object frmEditVolume: TfrmEditVolume
     AnchorSideTop.Control = txtAuthor
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = btnCancel
-    Left = 500
-    Height = 42
+    Left = 498
+    Height = 46
     Hint = 'Accept changes and close'
-    Top = 185
-    Width = 42
+    Top = 197
+    Width = 44
     Anchors = [akTop, akRight]
     AutoSize = True
     BorderSpacing.Around = 8
@@ -255,7 +255,7 @@ object frmEditVolume: TfrmEditVolume
     Left = 550
     Height = 42
     Hint = 'Close this dialog and cancel changes'
-    Top = 185
+    Top = 197
     Width = 42
     Anchors = [akTop, akRight]
     BorderSpacing.Around = 8

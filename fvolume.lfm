@@ -1,40 +1,41 @@
 object frmVolume: TfrmVolume
-  Left = 306
-  Height = 400
-  Top = 881
-  Width = 400
+  Left = 337
+  Height = 350
+  Top = 571
+  Width = 500
   Caption = 'Volume'
-  ClientHeight = 400
-  ClientWidth = 400
-  Constraints.MinHeight = 400
-  Constraints.MinWidth = 400
+  ClientHeight = 350
+  ClientWidth = 500
+  Constraints.MinHeight = 350
+  Constraints.MinWidth = 500
+  OnCreate = FormCreate
   LCLVersion = '2.0.6.0'
-  object labStories: TLabel
+  object labDocuments: TLabel
     AnchorSideLeft.Control = Owner
     AnchorSideTop.Control = Owner
     Left = 8
     Height = 17
     Top = 8
-    Width = 43
+    Width = 71
     BorderSpacing.Around = 8
-    Caption = 'Stories'
+    Caption = 'Documents'
     ParentColor = False
   end
   object lstStories: TListBox
     AnchorSideLeft.Control = Owner
-    AnchorSideTop.Control = labStories
+    AnchorSideTop.Control = labDocuments
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = btnBuild
     Left = 8
-    Height = 271
+    Height = 221
     Top = 33
-    Width = 384
+    Width = 484
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Around = 8
     ItemHeight = 0
-    ScrollWidth = 380
+    ScrollWidth = 482
     TabOrder = 0
     TopIndex = -1
   end
@@ -44,7 +45,7 @@ object frmVolume: TfrmVolume
     AnchorSideBottom.Side = asrBottom
     Left = 8
     Height = 42
-    Top = 350
+    Top = 300
     Width = 42
     Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 8
@@ -189,7 +190,7 @@ object frmVolume: TfrmVolume
     AnchorSideBottom.Side = asrBottom
     Left = 58
     Height = 42
-    Top = 350
+    Top = 300
     Width = 42
     Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 8
@@ -334,7 +335,7 @@ object frmVolume: TfrmVolume
     AnchorSideBottom.Side = asrBottom
     Left = 108
     Height = 42
-    Top = 350
+    Top = 300
     Width = 42
     Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 8
@@ -479,7 +480,7 @@ object frmVolume: TfrmVolume
     AnchorSideBottom.Side = asrBottom
     Left = 158
     Height = 42
-    Top = 350
+    Top = 300
     Width = 42
     Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 8
@@ -624,7 +625,7 @@ object frmVolume: TfrmVolume
     AnchorSideBottom.Side = asrBottom
     Left = 208
     Height = 42
-    Top = 350
+    Top = 300
     Width = 42
     Anchors = [akLeft, akBottom]
     BorderSpacing.Around = 8
@@ -767,9 +768,9 @@ object frmVolume: TfrmVolume
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = Owner
     AnchorSideBottom.Side = asrBottom
-    Left = 296
+    Left = 383
     Height = 36
-    Top = 356
+    Top = 306
     Width = 100
     Anchors = [akBottom]
     BorderSpacing.Around = 8
@@ -780,9 +781,9 @@ object frmVolume: TfrmVolume
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = btnMake
-    Left = 296
+    Left = 383
     Height = 36
-    Top = 312
+    Top = 262
     Width = 100
     Anchors = [akBottom]
     BorderSpacing.Around = 8

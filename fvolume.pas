@@ -19,8 +19,9 @@ type
     btnProfiles: TBitBtn;
     btnMake: TButton;
     btnBuild: TButton;
-    labStories: TLabel;
+    labDocuments: TLabel;
     lstStories: TListBox;
+    procedure FormCreate(Sender: TObject);
   private
 
   public
@@ -33,6 +34,14 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TfrmVolume }
+
+procedure TfrmVolume.FormCreate(Sender: TObject);
+begin
+  Left := (Screen.Width - Width) div 2;
+  Top := (Screen.Height - Height) div 2;
+end;
 
 end.
 
