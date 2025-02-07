@@ -1,0 +1,11 @@
+object frmFicmake: TfrmFicmake
+  Left = 418
+  Height = 440
+  Top = 111
+  Width = 620
+  Caption = 'Ficmake'
+  Constraints.MinHeight = 440
+  Constraints.MinWidth = 620
+  DesignTimePPI = 110
+  LCLVersion = '3.4.0.0'
+end
